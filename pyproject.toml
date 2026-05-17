@@ -1,0 +1,29 @@
+[project]
+name = "llminferencebakeoff"
+version = "0.1.0"
+description = "LLM inference bake-off: HF Transformers vs SGLang vs vLLM on Modal"
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.10.9",
+    "modal>=1.4.2",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.9.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llminferencebakeoff"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W"]
+ignore = ["E501"]
